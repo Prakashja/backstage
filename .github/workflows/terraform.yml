@@ -46,7 +46,7 @@ name: 'Terraform'
 
 on:
   workflow_dispatch:
-    Define inputs that are required for the manual trigger
+    # Define inputs that are required for the manual trigger
     inputs:
       instanceName:
         description: 'Name of the AWS Instance'  # What's this input for?
@@ -60,9 +60,9 @@ on:
       action:
         description: 'Action to perform (apply/destroy)'
         required: true
-  push:
-    branches: [ "main" ]
-  pull_request:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
 
 permissions:
   contents: read
