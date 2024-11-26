@@ -45,6 +45,21 @@
 name: 'Terraform'
 
 on:
+  workflow_dispatch:
+    # Define inputs that are required for the manual trigger
+    inputs:
+      instanceName:
+        description: 'Name of the AWS Instance'  # What's this input for?
+        required: true  # Is it optional or required?
+      awsRegion:
+        description: 'AWS Region for the instance'
+        required: true
+      instanceType:
+        description: 'AWS instance type'
+        required: true
+      action:
+        description: 'Action to perform (apply/destroy)'
+        required: true
   push:
     branches: [ "main" ]
   pull_request:
